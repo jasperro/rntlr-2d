@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="58" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://Assets/sprites/static/Achtergrond achtergrondhuis.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_0.png" type="Texture" index="14"></ext_resource>
+	<ext_resource path="res://Assets/sprites/static/AchtergrondHuis.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_3.png" type="Texture" index="17"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep0.png" type="Texture" index="19"></ext_resource>
+	<ext_resource path="res://Assets/scripts/player_brain.gd" type="Script" index="23"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal2.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 4.png" type="Texture" index="27"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 10.png" type="Texture" index="33"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 3.png" type="Texture" index="26"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 1.png" type="Texture" index="24"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 8.png" type="Texture" index="43"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 12.png" type="Texture" index="35"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 2.png" type="Texture" index="37"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 3.png" type="Texture" index="38"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 7.png" type="Texture" index="30"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 6.png" type="Texture" index="41"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 1.png" type="Texture" index="36"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 4.png" type="Texture" index="39"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 6.png" type="Texture" index="29"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 2.png" type="Texture" index="25"></ext_resource>
+	<ext_resource path="res://Assets/sounds/maintheme.ogg" type="AudioStream" index="0"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 5.png" type="Texture" index="40"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 5.png" type="Texture" index="28"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 9.png" type="Texture" index="32"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 8.png" type="Texture" index="31"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Standing 11.png" type="Texture" index="34"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 9.png" type="Texture" index="44"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Walking 7.png" type="Texture" index="42"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal1.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal3.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal0.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Assets/sprites/static/oudpraten.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep2.png" type="Texture" index="21"></ext_resource>
+	<ext_resource path="res://Assets/sprites/static/Grondhuis.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_2.png" type="Texture" index="16"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_2.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://Assets/sprites/static/jongpraten.png" type="Texture" index="18"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep3.png" type="Texture" index="22"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_1.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://Assets/sounds/ThankYouForPlaying.ogg" type="AudioStream" index="1"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_0.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_1.png" type="Texture" index="15"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_3.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep1.png" type="Texture" index="20"></ext_resource>
+	<resource type="RectangleShape2D" path="local://4">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 10, 10 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://8">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 131.901, 10 </vector2>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://13">
+		<array name="animations" len="1" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="4" shared="false">
+					<resource  external="5">  </resource>
+					<resource  external="6">  </resource>
+					<resource  external="7">  </resource>
+					<resource  external="8">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 5 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://11">
+		<array name="animations" len="1" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="4" shared="false">
+					<resource  external="9">  </resource>
+					<resource  external="10">  </resource>
+					<resource  external="11">  </resource>
+					<resource  external="12">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 2 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="GDScript" path="local://9">
+		<string name="script/source"> "extends Sprite&#000a;func _ready():&#000a;&#0009;set_process(true)&#000a;&#000a;func _process(delta):&#000a;&#0009;var playerx = (get_node(&quot;../../Player1&quot;).get_pos().x)&#000a;&#0009;if (playerx &gt; 350 &amp;&amp; playerx &lt; 746):&#000a;&#0009;&#0009;show()&#000a;&#0009;else:&#000a;&#0009;&#0009;hide()" </string>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://12">
+		<array name="animations" len="1" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="4" shared="false">
+					<resource  external="14">  </resource>
+					<resource  external="15">  </resource>
+					<resource  external="16">  </resource>
+					<resource  external="17">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 2 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="GDScript" path="local://10">
+		<string name="script/source"> "extends Sprite&#000a;func _ready():&#000a;&#0009;set_process(true)&#000a;&#0009;var takenruby = 0&#000a;&#000a;func _process(delta):&#000a;&#0009;var playerx = (get_node(&quot;../../Player1&quot;).get_pos().x)&#000a;&#0009;if (playerx &gt; 747 &amp;&amp; playerx &lt; 1000):&#000a;&#0009;&#0009;show()&#000a;&#0009;else:&#000a;&#0009;&#0009;hide()" </string>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://14">
+		<array name="animations" len="1" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="4" shared="false">
+					<resource  external="19">  </resource>
+					<resource  external="20">  </resource>
+					<resource  external="21">  </resource>
+					<resource  external="22">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 5 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="GDScript" path="local://15">
+		<string name="script/source"> "extends AnimatedSprite&#000a;&#000a;# class member variables go here, for example:&#000a;# var a = 2&#000a;# var b = &quot;textvar&quot;&#000a;&#000a;func _ready():&#000a;&#0009;set_process(true)&#000a;&#000a;func _process(delta):&#000a;&#0009;if (get_node(&quot;../../Player1&quot;).get_pos().x &gt; 700 ):&#000a;&#0009;&#0009;hide()&#000a;" </string>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://1">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 10, 13.975 </vector2>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://6">
+		<array name="animations" len="2" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="12" shared="false">
+					<resource  external="24">  </resource>
+					<resource  external="25">  </resource>
+					<resource  external="26">  </resource>
+					<resource  external="27">  </resource>
+					<resource  external="28">  </resource>
+					<resource  external="29">  </resource>
+					<resource  external="30">  </resource>
+					<resource  external="31">  </resource>
+					<resource  external="32">  </resource>
+					<resource  external="33">  </resource>
+					<resource  external="34">  </resource>
+					<resource  external="35">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 5 </real>
+			</dictionary>
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="9" shared="false">
+					<resource  external="36">  </resource>
+					<resource  external="37">  </resource>
+					<resource  external="38">  </resource>
+					<resource  external="39">  </resource>
+					<resource  external="40">  </resource>
+					<resource  external="41">  </resource>
+					<resource  external="42">  </resource>
+					<resource  external="43">  </resource>
+					<resource  external="44">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "walk" </string>
+				<string> "speed" </string>
+				<real> 5 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="GDScript" path="local://7">
+		<string name="script/source"> "extends AnimatedSprite&#000a;func _ready():&#000a;&#0009;set_animation (&quot;default&quot;)&#000a;func _process(delta):&#000a;&#0009;if Input.is_action_pressed(&quot;ui_right&quot;):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;&#0009;set_flip_h (false)&#000a;&#0009;elif Input.is_action_pressed(&quot;ui_left&quot;):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;&#0009;set_flip_h (true)&#000a;&#0009;elif Input.is_action_pressed(&quot;ui_up&quot;):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;elif Input.is_key_pressed(KEY_D):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;&#0009;set_flip_h (false)&#000a;&#0009;elif Input.is_key_pressed(KEY_A):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;&#0009;set_flip_h (true)&#000a;&#0009;elif Input.is_key_pressed(KEY_W):&#000a;&#0009;&#0009;set_animation (&quot;walk&quot;)&#000a;&#0009;else:&#000a;&#0009;&#0009;set_animation (&quot;default&quot;)&#000a;&#0009;" </string>
+
+	</resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="98">
+				<string> "Node2D" </string>
+				<string> "__meta__" </string>
+				<string> "Music" </string>
+				<string> "stream/stream" </string>
+				<string> "stream/play" </string>
+				<string> "stream/loop" </string>
+				<string> "stream/volume_db" </string>
+				<string> "stream/autoplay" </string>
+				<string> "stream/paused" </string>
+				<string> "stream/loop_restart_time" </string>
+				<string> "stream/buffering_ms" </string>
+				<string> "StreamPlayer" </string>
+				<string> "ThankYouForPlaying" </string>
+				<string> "Game Objects" </string>
+				<string> "achterhuisachtergrond" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/scale" </string>
+				<string> "texture" </string>
+				<string> "region" </string>
+				<string> "region_rect" </string>
+				<string> "Sprite" </string>
+				<string> "huisachtergrond" </string>
+				<string> "Camera2D" </string>
+				<string> "anchor_mode" </string>
+				<string> "rotating" </string>
+				<string> "current" </string>
+				<string> "zoom" </string>
+				<string> "limit/left" </string>
+				<string> "limit/top" </string>
+				<string> "limit/right" </string>
+				<string> "limit/bottom" </string>
+				<string> "drag_margin/h_enabled" </string>
+				<string> "drag_margin/v_enabled" </string>
+				<string> "smoothing/enable" </string>
+				<string> "smoothing/speed" </string>
+				<string> "drag_margin/left" </string>
+				<string> "drag_margin/top" </string>
+				<string> "drag_margin/right" </string>
+				<string> "drag_margin/bottom" </string>
+				<string> "left_barrier" </string>
+				<string> "editor/display_folded" </string>
+				<string> "input/pickable" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
+				<string> "collision/layers" </string>
+				<string> "collision/mask" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
+				<string> "StaticBody2D" </string>
+				<string> "CollisionShape2D" </string>
+				<string> "shape" </string>
+				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
+				<string> "groundcollision" </string>
+				<string> "huisvloer" </string>
+				<string> "right_barrier1" </string>
+				<string> "portal" </string>
+				<string> "frames" </string>
+				<string> "animation" </string>
+				<string> "frame" </string>
+				<string> "playing" </string>
+				<string> "flip_h" </string>
+				<string> "AnimatedSprite" </string>
+				<string> "Hahn" </string>
+				<string> "mode" </string>
+				<string> "mass" </string>
+				<string> "gravity_scale" </string>
+				<string> "custom_integrator" </string>
+				<string> "continuous_cd" </string>
+				<string> "contacts_reported" </string>
+				<string> "contact_monitor" </string>
+				<string> "sleeping" </string>
+				<string> "can_sleep" </string>
+				<string> "velocity/linear" </string>
+				<string> "velocity/angular" </string>
+				<string> "damp_override/linear" </string>
+				<string> "damp_override/angular" </string>
+				<string> "RigidBody2D" </string>
+				<string> "HahnSRsprite" </string>
+				<string> "NpcBubble" </string>
+				<string> "script/script" </string>
+				<string> "Feet" </string>
+				<string> "enabled" </string>
+				<string> "cast_to" </string>
+				<string> "layer_mask" </string>
+				<string> "type_mask" </string>
+				<string> "RayCast2D" </string>
+				<string> "HahnJr" </string>
+				<string> "HahnJRsprite" </string>
+				<string> "Ruby" </string>
+				<string> "RubySprite" </string>
+				<string> "Player1" </string>
+				<string> "move_speed" </string>
+				<string> "next_level" </string>
+				<string> "Ronan" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 30 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="720"> 				-1, -1, 0, 0, -1, 1, 1, 0, 0, 0, 0, 11, 2, -1, 8, 3, 1, 4, 2, 5, 2, 6, 3, 7, 2, 8, 4, 9, 5, 10, 6, 0, 0, 0, 11, 12, -1, 8, 3, 7, 4, 2, 5, 4, 6, 8, 7, 2, 8, 4, 9, 5, 10, 9, 0, 0, 0, 0, 13, -1, 0, 0, 3, 0, 20, 14, -1, 5, 15, 10, 16, 11, 17, 12, 18, 2, 19, 13, 0, 3, 0, 20, 21, -1, 5, 15, 10, 16, 11, 17, 14, 18, 2, 19, 15, 0, 3, 0, 22, 22, -1, 17, 15, 16, 23, 17, 24, 4, 25, 2, 26, 18, 27, 19, 28, 20, 29, 21, 30, 22, 31, 2, 32, 2, 33, 4, 34, 23, 35, 5, 36, 24, 37, 5, 38, 24, 0, 3, 0, 51, 39, -1, 13, 40, 2, 15, 25, 16, 26, 41, 4, 42, 27, 43, 28, 44, 4, 45, 17, 46, 17, 47, 29, 48, 5, 49, 30, 50, 5, 0, 7, 0, 52, 52, -1, 6, 15, 31, 16, 32, 53, 27, 54, 4, 55, 33, 1, 34, 0, 3, 0, 51, 56, -1, 12, 15, 35, 16, 26, 41, 4, 42, 36, 43, 37, 44, 4, 45, 17, 46, 17, 47, 29, 48, 5, 49, 30, 50, 5, 0, 9, 0, 52, 52, -1, 5, 15, 38, 16, 39, 53, 36, 54, 4, 55, 40, 0, 9, 0, 20, 57, -1, 5, 15, 41, 16, 42, 17, 43, 18, 2, 19, 44, 0, 3, 0, 51, 58, -1, 12, 15, 45, 16, 46, 41, 4, 42, 27, 43, 28, 44, 4, 45, 17, 46, 17, 47, 29, 48, 5, 49, 30, 50, 5, 0, 12, 0, 52, 52, -1, 6, 15, 31, 16, 32, 53, 27, 54, 4, 55, 33, 1, 34, 0, 3, 0, 65, 59, -1, 7, 15, 47, 16, 48, 60, 49, 61, 50, 62, 17, 63, 2, 64, 2, 0, 3, 0, 80, 66, -1, 20, 15, 51, 16, 52, 41, 4, 45, 17, 46, 17, 67, 17, 68, 30, 49, 30, 50, 53, 69, 54, 70, 4, 71, 40, 72, 40, 73, 4, 74, 4, 75, 2, 76, 29, 77, 5, 78, 55, 79, 55, 0, 15, 0, 65, 81, -1, 6, 15, 56, 16, 57, 60, 58, 61, 50, 63, 2, 64, 2, 0, 15, 0, 20, 82, -1, 4, 15, 59, 16, 60, 17, 61, 83, 62, 0, 15, 0, 89, 84, -1, 5, 15, 63, 85, 2, 86, 64, 87, 17, 88, 65, 0, 3, 0, 80, 90, -1, 20, 15, 66, 16, 52, 41, 4, 45, 17, 46, 17, 67, 17, 68, 30, 49, 30, 50, 53, 69, 54, 70, 4, 71, 40, 72, 40, 73, 4, 74, 4, 75, 2, 76, 29, 77, 5, 78, 55, 79, 55, 0, 19, 0, 65, 91, -1, 7, 15, 67, 16, 68, 60, 69, 61, 50, 62, 17, 63, 2, 64, 2, 0, 19, 0, 20, 82, -1, 4, 15, 70, 16, 60, 17, 71, 83, 72, 0, 19, 0, 89, 84, -1, 5, 15, 63, 85, 2, 86, 64, 87, 17, 88, 65, 0, 3, 0, 80, 92, -1, 20, 15, 73, 16, 52, 41, 4, 45, 17, 46, 17, 67, 17, 68, 30, 49, 30, 50, 53, 69, 54, 70, 4, 71, 40, 72, 40, 73, 4, 74, 4, 75, 2, 76, 29, 77, 5, 78, 55, 79, 55, 0, 23, 0, 65, 93, -1, 7, 15, 74, 16, 68, 60, 75, 61, 50, 63, 2, 64, 2, 83, 76, 0, 23, 0, 89, 84, -1, 5, 15, 63, 85, 2, 86, 64, 87, 17, 88, 65, 0, 3, 0, 80, 94, -1, 25, 15, 77, 41, 4, 42, 78, 43, 79, 44, 4, 45, 17, 46, 17, 67, 40, 68, 80, 49, 30, 50, 53, 69, 54, 70, 4, 71, 40, 72, 40, 73, 4, 74, 4, 75, 2, 76, 29, 77, 5, 78, 55, 79, 55, 83, 81, 95, 82, 96, 83, 0, 26, 0, 65, 97, -1, 7, 15, 84, 16, 85, 60, 86, 61, 50, 62, 87, 63, 2, 83, 88, 0, 26, 0, 52, 52, -1, 5, 15, 89, 16, 90, 53, 78, 54, 4, 55, 40, 0, 26, 0, 89, 84, -1, 5, 15, 91, 85, 2, 86, 64, 87, 17, 88, 65, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="92" shared="false">
+				<dictionary  shared="false">
+					<string> "__editor_plugin_screen__" </string>
+					<string> "2D" </string>
+				</dictionary>
+				<resource  external="0">  </resource>
+				<bool> True </bool>
+				<real> 24 </real>
+				<bool> False </bool>
+				<real> 0 </real>
+				<int> 500 </int>
+				<resource  external="1">  </resource>
+				<real> 5 </real>
+				<int> 7000 </int>
+				<vector2> 864.743, 281.419 </vector2>
+				<vector2> 1.08911, 1.1911 </vector2>
+				<resource  external="2">  </resource>
+				<rect2> 0, 0, 9000, 9000 </rect2>
+				<resource  external="3">  </resource>
+				<rect2> 0, 0, 1000, 500 </rect2>
+				<vector2> 861, 206 </vector2>
+				<int> 1 </int>
+				<vector2> 1, 1 </vector2>
+				<int> -10000000 </int>
+				<int> -5000000 </int>
+				<int> 5000000 </int>
+				<int> 10000000 </int>
+				<real> 50 </real>
+				<real> 0.2 </real>
+				<vector2> 336.994, 423 </vector2>
+				<vector2> 1.53106, 1 </vector2>
+				<resource  resource_type="Shape2D" path="local://4">  </resource>
+				<matrix32> 1, -0, 0, 14.0385, 0, -169.5 </matrix32>
+				<vector2> 0, 0 </vector2>
+				<real> 1 </real>
+				<vector2> 0, -169.5 </vector2>
+				<vector2> 1, 14.0385 </vector2>
+				<int> -1 </int>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
+				<vector2> -393.006, 362 </vector2>
+				<resource  resource_type="Shape2D" path="local://8">  </resource>
+				<matrix32> 2.73851, -0, 0, 3.38388, 820.147, 61.8879 </matrix32>
+				<vector2> 820.147, 61.8879 </vector2>
+				<vector2> 2.73851, 3.38388 </vector2>
+				<int> 0 </int>
+				<vector2> 820.347, 205 </vector2>
+				<vector2> 0.54848, 1.0306 </vector2>
+				<resource  external="4">  </resource>
+				<rect2> 0, 0, 1300, 450 </rect2>
+				<vector2> 1392.28, 418 </vector2>
+				<vector2> 1.85265, 1 </vector2>
+				<vector2> 1275.01, 294.989 </vector2>
+				<vector2> 1.78022, 1.78022 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://13">  </resource>
+				<string> "default" </string>
+				<vector2> 678.81, 346.391 </vector2>
+				<vector2> 0.587677, 0.612786 </vector2>
+				<real> 0.1 </real>
+				<real> 10 </real>
+				<real> -1 </real>
+				<vector2> -25.2609, -27.05 </vector2>
+				<vector2> 0.624792, 0.624792 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://11">  </resource>
+				<vector2> 249.824, -196.114 </vector2>
+				<vector2> 2.18979, 2.11905 </vector2>
+				<resource  external="13">  </resource>
+				<resource  resource_type="Script" path="local://9">  </resource>
+				<vector2> -18.7178, 19.5827 </vector2>
+				<vector2> 0, 50 </vector2>
+				<int> 15 </int>
+				<vector2> 878.81, 346.391 </vector2>
+				<vector2> -14.5067, -28.6807 </vector2>
+				<vector2> 1.96818, 2.14269 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://12">  </resource>
+				<vector2> 283.857, -196.114 </vector2>
+				<resource  external="18">  </resource>
+				<resource  resource_type="Script" path="local://10">  </resource>
+				<vector2> 768.81, 356.391 </vector2>
+				<vector2> -31.5228, -28.6807 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://14">  </resource>
+				<resource  resource_type="Script" path="local://15">  </resource>
+				<vector2> 371, 340 </vector2>
+				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<matrix32> 1.83023, -0, 0, 2.79511, 20.5237, -7.72418 </matrix32>
+				<real> 1.020408 </real>
+				<resource  external="23">  </resource>
+				<int> 400 </int>
+				<string> "res://Levels/level2.xml" </string>
+				<vector2> 18.5, -18.5 </vector2>
+				<vector2> 1.28462, 1.28462 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://6">  </resource>
+				<int> 7 </int>
+				<resource  resource_type="Script" path="local://7">  </resource>
+				<vector2> 20.5237, -7.72418 </vector2>
+				<vector2> 1.83023, 2.79511 </vector2>
+				<vector2> 21.4702, -10.9404 </vector2>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>
