@@ -1,0 +1,232 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Assets/sounds/maintheme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/sounds/ThankYouForPlaying.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/sprites/static/Achtergrond achtergrondhuis.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/static/AchtergrondHuis.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/static/Grondhuis.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Oud/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/sprites/static/oudpraten.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_0.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/sprites/animated/Hahns/Jong/sprite_3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/sprites/static/jongpraten.png" type="Texture" id=19]
+[ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep0.png" type="Texture" id=20]
+[ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep1.png" type="Texture" id=21]
+[ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep2.png" type="Texture" id=22]
+[ext_resource path="res://Assets/sprites/animated/Ruby/Rubbep3.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Ronan.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/scripts/NpcBubble.gd" type="Script" id=46]
+[ext_resource path="res://Scenes/EndArea.tscn" type="PackedScene" id=47]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 131.901, 10 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="GDScript" id=19]
+script/source = "extends Area2D
+
+func _on_Ruby_body_entered(body):
+	queue_free()
+"
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 44.8031, 88.2121 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 24.0
+autoplay = true
+
+[node name="ThankYouForPlaying" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 5.0
+autoplay = true
+
+[node name="Game Objects" type="Node2D" parent="."]
+
+[node name="RonanPlayer" parent="Game Objects" instance=ExtResource( 24 )]
+position = Vector2( 398, 360 )
+
+[node name="achterhuisachtergrond" type="Sprite" parent="Game Objects"]
+position = Vector2( 864.743, 281.419 )
+scale = Vector2( 1.08911, 1.1911 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 9000, 9000 )
+
+[node name="huisachtergrond" type="Sprite" parent="Game Objects"]
+position = Vector2( 864.743, 281.419 )
+scale = Vector2( 1.08911, 1.1911 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 500 )
+
+[node name="Camera2D" type="Camera2D" parent="Game Objects"]
+position = Vector2( 861, 206 )
+current = true
+limit_top = -5000000
+limit_right = 5000000
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_speed = 50.0
+drag_margin_left = 0.0
+drag_margin_right = 0.0
+
+[node name="left_barrier" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( 336.994, 423 )
+scale = Vector2( 1.53106, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
+position = Vector2( 0, -169.5 )
+scale = Vector2( 1, 14.0385 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="groundcollision" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( -393.006, 362 )
+scale = Vector2( 1.53106, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
+position = Vector2( 820.147, 61.8879 )
+scale = Vector2( 2.73851, 3.38388 )
+shape = SubResource( 2 )
+
+[node name="huisvloer" type="Sprite" parent="Game Objects/groundcollision"]
+position = Vector2( 820.347, 205 )
+scale = Vector2( 0.54848, 1.0306 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1300, 450 )
+
+[node name="right_barrier1" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( 1392.28, 418 )
+scale = Vector2( 1.85265, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
+position = Vector2( 0, -169.5 )
+scale = Vector2( 1, 14.0385 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hahn" type="Node2D" parent="Game Objects"]
+position = Vector2( 678.81, 340.391 )
+scale = Vector2( 0.587677, 0.612786 )
+
+[node name="HahnSRsprite" type="AnimatedSprite" parent="Game Objects/Hahn"]
+position = Vector2( -25.2609, -27.05 )
+scale = Vector2( 0.624792, 0.624792 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="NpcBubble" type="Sprite" parent="Game Objects/Hahn"]
+position = Vector2( 249.824, -196.114 )
+scale = Vector2( 2.18979, 2.11905 )
+texture = ExtResource( 14 )
+script = ExtResource( 46 )
+
+[node name="Feet" type="RayCast2D" parent="Game Objects/Hahn"]
+position = Vector2( -18.7178, 19.5827 )
+enabled = true
+
+[node name="HahnJr" type="Node2D" parent="Game Objects"]
+position = Vector2( 878.81, 335.391 )
+scale = Vector2( 0.587677, 0.612786 )
+
+[node name="HahnJRsprite" type="AnimatedSprite" parent="Game Objects/HahnJr"]
+position = Vector2( -14.5067, -28.6807 )
+scale = Vector2( 1.96818, 2.14269 )
+frames = SubResource( 8 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="NpcBubble" type="Sprite" parent="Game Objects/HahnJr"]
+position = Vector2( 283.857, -196.114 )
+scale = Vector2( 2.18979, 2.11905 )
+texture = ExtResource( 19 )
+script = ExtResource( 46 )
+
+[node name="Feet" type="RayCast2D" parent="Game Objects/HahnJr"]
+position = Vector2( -18.7178, 19.5827 )
+enabled = true
+
+[node name="Ruby" type="Area2D" parent="Game Objects"]
+position = Vector2( 768.81, 356.391 )
+scale = Vector2( 0.587677, 0.612786 )
+script = SubResource( 19 )
+
+[node name="RubySprite" type="AnimatedSprite" parent="Game Objects/Ruby"]
+position = Vector2( -31.5228, -28.6807 )
+scale = Vector2( 1.96818, 2.14269 )
+frames = SubResource( 11 )
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/Ruby"]
+position = Vector2( -15.2753, -38.2939 )
+shape = SubResource( 18 )
+
+[node name="EndArea" parent="Game Objects" instance=ExtResource( 47 )]
+position = Vector2( 1275.01, 294.989 )
+NextLevel = "res://Levels/Platformer.tscn"
+
+[node name="portal" type="AnimatedSprite" parent="Game Objects/EndArea"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 17 )
+playing = true
+flip_h = true
+
+[connection signal="body_entered" from="Game Objects/Ruby" to="Game Objects/Ruby" method="_on_Ruby_body_entered"]

@@ -1,0 +1,219 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Assets/sounds/maintheme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/sprites/static/Mountain.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/trees/trees.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/static/background.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Ronan.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/EndArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/scripts/NpcBubble.gd" type="Script" id=7]
+[ext_resource path="res://Assets/sprites/static/NPC.png" type="Texture" id=27]
+[ext_resource path="res://Assets/sprites/static/TextNPCstory.png" type="Texture" id=28]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_00.png" type="Texture" id=29]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_01.png" type="Texture" id=30]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_02.png" type="Texture" id=31]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_03.png" type="Texture" id=32]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_04.png" type="Texture" id=33]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_05.png" type="Texture" id=34]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_06.png" type="Texture" id=35]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_07.png" type="Texture" id=36]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_08.png" type="Texture" id=37]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_09.png" type="Texture" id=38]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_10.png" type="Texture" id=39]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_11.png" type="Texture" id=40]
+[ext_resource path="res://Assets/sprites/animated/Npc1/sprite_12.png" type="Texture" id=41]
+[ext_resource path="res://Assets/sprites/animated/ctrl1.png" type="Texture" id=42]
+[ext_resource path="res://Assets/sprites/animated/ctrl2.png" type="Texture" id=43]
+[ext_resource path="res://Assets/sprites/static/grassground.png" type="Texture" id=44]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal0.png" type="Texture" id=45]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal1.png" type="Texture" id=46]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal2.png" type="Texture" id=47]
+[ext_resource path="res://Assets/sprites/animated/sprite_Kipportaal3.png" type="Texture" id=48]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 1776.33, 10 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 24.0
+autoplay = true
+
+[node name="Game Objects" type="Node2D" parent="."]
+
+[node name="Mountains" type="Sprite" parent="Game Objects"]
+position = Vector2( 618.985, 130 )
+scale = Vector2( 1.90189, 2.08 )
+z_index = -4096
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6400, 255 )
+
+[node name="treeb1" type="Sprite" parent="Game Objects"]
+position = Vector2( 2271.34, 296.643 )
+scale = Vector2( 3.19384, 3.96331 )
+texture = ExtResource( 3 )
+flip_h = true
+hframes = 6
+frame = 3
+
+[node name="BgTrees" type="Sprite" parent="Game Objects"]
+position = Vector2( 246.085, -27.8511 )
+scale = Vector2( 0.701995, 0.767738 )
+texture = ExtResource( 4 )
+
+[node name="BgTrees1" type="Sprite" parent="Game Objects"]
+position = Vector2( 3162.09, -27.8511 )
+scale = Vector2( 0.701995, 0.767738 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="RonanPlayer" parent="Game Objects" instance=ExtResource( 5 )]
+
+[node name="NPC3" type="Node2D" parent="Game Objects"]
+position = Vector2( 1888.81, 338.391 )
+scale = Vector2( 0.587677, 0.612786 )
+
+[node name="NPCsprite" type="Sprite" parent="Game Objects/NPC3"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 27 )
+
+[node name="Feet" type="RayCast2D" parent="Game Objects/NPC3"]
+visible = false
+enabled = true
+
+[node name="NpcBubble" type="Sprite" parent="Game Objects/NPC3"]
+position = Vector2( 206.219, -176.882 )
+scale = Vector2( 2.03682, 1.97102 )
+z_index = -5
+texture = ExtResource( 28 )
+script = ExtResource( 7 )
+
+[node name="NPC1" type="Node2D" parent="Game Objects"]
+position = Vector2( 377, 299 )
+
+[node name="NPCsprite" type="AnimatedSprite" parent="Game Objects/NPC1"]
+position = Vector2( 14.8969, 42.7962 )
+scale = Vector2( 1.81242, 1.70762 )
+frames = SubResource( 1 )
+frame = 6
+playing = true
+
+[node name="Feet" type="RayCast2D" parent="Game Objects/NPC1"]
+visible = false
+enabled = true
+
+[node name="NpcBubble" type="AnimatedSprite" parent="Game Objects/NPC1"]
+position = Vector2( 165.659, -52.945 )
+scale = Vector2( 1.18122, 1.18576 )
+frames = SubResource( 12 )
+script = ExtResource( 7 )
+
+[node name="left_barrier" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( -423.006, 423 )
+scale = Vector2( 1.53106, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
+position = Vector2( 0, -169.5 )
+scale = Vector2( 1, 14.0385 )
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="groundcollision" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( -393.006, 362 )
+scale = Vector2( 1.53106, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
+position = Vector2( 1525.75, 61.8879 )
+scale = Vector2( 0.877087, 3.38388 )
+shape = SubResource( 10 )
+
+[node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
+position = Vector2( 1158.02, 205 )
+scale = Vector2( 0.54848, 1.0306 )
+texture = ExtResource( 44 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 450 )
+
+[node name="right_barrier1" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( 4309.28, 418 )
+scale = Vector2( 1.85265, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
+position = Vector2( 0, -169.5 )
+scale = Vector2( 1, 14.0385 )
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tree1" type="Sprite" parent="Game Objects"]
+position = Vector2( 1290, 340 )
+scale = Vector2( 3.89738, 4.36933 )
+texture = ExtResource( 3 )
+hframes = 6
+frame = 2
+
+[node name="tree3" type="Sprite" parent="Game Objects"]
+position = Vector2( 1458.39, 287.093 )
+scale = Vector2( 2.44069, 3.16467 )
+z_index = -10
+texture = ExtResource( 3 )
+hframes = 6
+
+[node name="tree5" type="Sprite" parent="Game Objects"]
+position = Vector2( 1971.7, 287.698 )
+scale = Vector2( 3.23544, 3.72157 )
+z_index = -10
+texture = ExtResource( 3 )
+hframes = 6
+frame = 3
+
+[node name="tree4" type="Sprite" parent="Game Objects"]
+position = Vector2( 1695.73, 284.837 )
+scale = Vector2( 4.36639, 5.26588 )
+texture = ExtResource( 3 )
+flip_h = true
+hframes = 6
+frame = 1
+
+[node name="EndArea" parent="Game Objects" instance=ExtResource( 6 )]
+
+[node name="portal" type="AnimatedSprite" parent="Game Objects/EndArea"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 11 )
+frame = 3
+playing = true
+flip_h = true

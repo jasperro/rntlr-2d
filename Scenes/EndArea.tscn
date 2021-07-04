@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/scripts/LevelEnd.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 11.455, 45.0837 )
+
+[node name="EndArea" type="Area2D"]
+position = Vector2( 3527.01, 294.989 )
+scale = Vector2( 1.78022, 1.78022 )
+script = ExtResource( 1 )
+NextLevel = "res://Levels/Level 1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 13.3602, 3.34006 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 13 )
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

@@ -1,0 +1,110 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Assets/scripts/player_brain.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sprites/animated/Standing 9.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/animated/Standing 5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/animated/Standing 4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/animated/Walking 3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/animated/Walking 2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sprites/animated/Walking 4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/sprites/animated/Walking 5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/sprites/animated/Walking 7.png" type="Texture" id=9]
+[ext_resource path="res://Assets/sprites/animated/Walking 6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/animated/Standing 1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/animated/Standing 3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/animated/Standing 11.png" type="Texture" id=13]
+[ext_resource path="res://Assets/sprites/animated/Standing 7.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/animated/Standing 2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/animated/Standing 8.png" type="Texture" id=16]
+[ext_resource path="res://Assets/sprites/animated/Standing 10.png" type="Texture" id=17]
+[ext_resource path="res://Assets/sprites/animated/Standing 6.png" type="Texture" id=18]
+[ext_resource path="res://Assets/sprites/animated/Walking 1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/sprites/animated/Standing 12.png" type="Texture" id=20]
+[ext_resource path="res://Assets/sprites/animated/Walking 8.png" type="Texture" id=21]
+[ext_resource path="res://Assets/sprites/animated/Walking 9.png" type="Texture" id=22]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.1
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends AnimatedSprite
+func _ready():
+	set_animation (\"default\")
+func _process(delta):
+	if Input.is_action_pressed(\"ui_right\"):
+		set_animation (\"walk\")
+		set_flip_h (false)
+	elif Input.is_action_pressed(\"ui_left\"):
+		set_animation (\"walk\")
+		set_flip_h (true)
+	elif Input.is_action_pressed(\"ui_up\"):
+		set_animation (\"walk\")
+	elif Input.is_key_pressed(KEY_D):
+		set_animation (\"walk\")
+		set_flip_h (false)
+	elif Input.is_key_pressed(KEY_A):
+		set_animation (\"walk\")
+		set_flip_h (true)
+	elif Input.is_key_pressed(KEY_W):
+		set_animation (\"walk\")
+	else:
+		set_animation (\"default\")
+	"
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 13.975 )
+
+[node name="RonanPlayer" type="RigidBody2D" groups=[
+"Player",
+]]
+position = Vector2( 222, 132 )
+z_index = 1
+mass = 1.02041
+physics_material_override = SubResource( 1 )
+gravity_scale = 10.0
+script = ExtResource( 1 )
+move_speed = 400
+next_level = "res://Levels/level2.xml"
+
+[node name="Ronan" type="AnimatedSprite" parent="."]
+position = Vector2( 18.5, -18.5 )
+scale = Vector2( 1.28462, 1.28462 )
+frames = SubResource( 2 )
+frame = 9
+playing = true
+script = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 20.5237, -7.6126 )
+scale = Vector2( 1.83023, 2.97841 )
+shape = SubResource( 4 )
+
+[node name="Feet" type="RayCast2D" parent="."]
+position = Vector2( 21.4702, -10.9404 )
+enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_top = -5000000
+limit_right = 5000000
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_speed = 50.0
+drag_margin_left = 0.0
+drag_margin_right = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
