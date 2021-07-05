@@ -83,7 +83,7 @@ next_level = "res://Levels/level2.xml"
 position = Vector2( 18.5, -18.5 )
 scale = Vector2( 1.28462, 1.28462 )
 frames = SubResource( 2 )
-frame = 9
+frame = 7
 playing = true
 script = SubResource( 3 )
 

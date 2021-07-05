@@ -38,7 +38,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ) ],
 "loop": true,
@@ -46,12 +46,12 @@ animations = [ {
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=3]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1776.33, 10 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
 "loop": true,
@@ -113,7 +113,7 @@ visible = false
 enabled = true
 
 [node name="NpcBubble" type="Sprite" parent="Game Objects/NPC3"]
-position = Vector2( 206.219, -176.882 )
+position = Vector2( 229.655, -145.761 )
 scale = Vector2( 2.03682, 1.97102 )
 z_index = -5
 texture = ExtResource( 28 )
@@ -126,7 +126,7 @@ position = Vector2( 377, 299 )
 position = Vector2( 14.8969, 42.7962 )
 scale = Vector2( 1.81242, 1.70762 )
 frames = SubResource( 1 )
-frame = 6
+frame = 10
 playing = true
 
 [node name="Feet" type="RayCast2D" parent="Game Objects/NPC1"]
@@ -134,9 +134,11 @@ visible = false
 enabled = true
 
 [node name="NpcBubble" type="AnimatedSprite" parent="Game Objects/NPC1"]
-position = Vector2( 165.659, -52.945 )
+position = Vector2( 146.589, -52.945 )
 scale = Vector2( 1.18122, 1.18576 )
-frames = SubResource( 12 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
 script = ExtResource( 7 )
 
 [node name="left_barrier" type="StaticBody2D" parent="Game Objects"]
@@ -146,7 +148,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
 position = Vector2( 0, -169.5 )
 scale = Vector2( 1, 14.0385 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -158,7 +160,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
 position = Vector2( 1525.75, 61.8879 )
 scale = Vector2( 0.877087, 3.38388 )
-shape = SubResource( 10 )
+shape = SubResource( 4 )
 
 [node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
 position = Vector2( 1158.02, 205 )
@@ -174,7 +176,7 @@ scale = Vector2( 1.85265, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
 position = Vector2( 0, -169.5 )
 scale = Vector2( 1, 14.0385 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -212,8 +214,7 @@ frame = 1
 [node name="EndArea" parent="Game Objects" instance=ExtResource( 6 )]
 
 [node name="portal" type="AnimatedSprite" parent="Game Objects/EndArea"]
-scale = Vector2( 1, 1 )
-frames = SubResource( 11 )
-frame = 3
+frames = SubResource( 5 )
+frame = 1
 playing = true
 flip_h = true

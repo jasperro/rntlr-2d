@@ -32,12 +32,12 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 131.901, 10 )
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=4]
 script/source = "extends RigidBody2D
 func _ready():
 	set_process(true)
@@ -45,27 +45,27 @@ func _ready():
 func _process(delta):
 	set_axis_velocity(Vector2(700,0))"
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 131.227, 10 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": true,
-"name": "rechts",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 37 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "links",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "rechts",
+"speed": 5.0
 } ]
 
-[sub_resource type="PhysicsMaterial" id=13]
+[sub_resource type="PhysicsMaterial" id=7]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="GDScript" id=14]
+[sub_resource type="GDScript" id=8]
 script/source = "extends RigidBody2D
 func _ready():
 	set_process(true)
@@ -74,18 +74,18 @@ func _process(delta):
 	set_axis_velocity(Vector2(0,-200))
 "
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 142.706, 10 )
 
-[sub_resource type="PhysicsMaterial" id=16]
+[sub_resource type="PhysicsMaterial" id=10]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="PhysicsMaterial" id=17]
+[sub_resource type="PhysicsMaterial" id=11]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="GDScript" id=18]
+[sub_resource type="GDScript" id=12]
 script/source = "extends RigidBody2D
 func _ready():
 	set_process(true)
@@ -94,10 +94,10 @@ func _process(delta):
 	set_axis_velocity(Vector2(0,-220))
 "
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 37.7163, 55.6234 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -296,7 +296,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
 position = Vector2( 0, -169.5 )
 scale = Vector2( 1, 14.0385 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -308,7 +308,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
 position = Vector2( -189.33, 61.8879 )
 scale = Vector2( 10.2216, 3.38388 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 
 [node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
 position = Vector2( -195.288, 205 )
@@ -321,169 +321,167 @@ region_rect = Rect2( 0, 0, 5000, 450 )
 position = Vector2( 3557.89, -165.971 )
 scale = Vector2( 1.53106, 1 )
 mode = 3
-script = SubResource( 10 )
+script = SubResource( 4 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/lopendeband"]
 position = Vector2( -5.84336, 57.5492 )
 scale = Vector2( 0.717083, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="lopendetexture" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -84.4189, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture3" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 9.6336, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture1" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -53.068, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture3 2" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 40.9846, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture2" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -21.7173, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture3 3" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 72.3352, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendeband1" type="RigidBody2D" parent="Game Objects"]
 position = Vector2( 4267.89, 54.029 )
 scale = Vector2( 1.53106, 1 )
 mode = 3
-script = SubResource( 10 )
+script = SubResource( 4 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/lopendeband1"]
 position = Vector2( -5.84351, 54.5847 )
 scale = Vector2( 0.717083, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="lopendetexture" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( -84.4189, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture3" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( 9.6336, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture1" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( -53.068, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture3 2" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( 40.9846, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture2" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( -21.7173, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture3 3" type="AnimatedSprite" parent="Game Objects/lopendeband1"]
 position = Vector2( 72.3352, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendeband2" type="RigidBody2D" parent="Game Objects"]
 position = Vector2( 5737.89, -765.971 )
 scale = Vector2( 1.53106, 1 )
 mode = 3
-script = SubResource( 10 )
+script = SubResource( 4 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/lopendeband2"]
 position = Vector2( -5.84336, 57.5492 )
 scale = Vector2( 0.717083, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="lopendetexture" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( -84.4189, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="lopendetexture3" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( 9.6336, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture1" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( -53.068, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture3 2" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( 40.9846, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture2" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( -21.7173, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
-frame = 1
 playing = true
 
 [node name="lopendetexture3 3" type="AnimatedSprite" parent="Game Objects/lopendeband2"]
 position = Vector2( 72.3352, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "rechts"
+frame = 1
 playing = true
 
 [node name="platform0" type="StaticBody2D" parent="Game Objects"]
@@ -493,7 +491,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform0"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform0"]
 position = Vector2( -0.577525, 84.8833 )
@@ -509,7 +507,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform9"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform9"]
 position = Vector2( -0.577525, 84.8833 )
@@ -522,14 +520,14 @@ region_rect = Rect2( 0, 0, 1300, 450 )
 position = Vector2( 1581.46, 517.258 )
 scale = Vector2( 2.34414, 1 )
 mode = 3
-physics_material_override = SubResource( 13 )
+physics_material_override = SubResource( 7 )
 gravity_scale = 0.0
-script = SubResource( 14 )
+script = SubResource( 8 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/trampoline"]
 position = Vector2( -1.11895, 54.4986 )
 scale = Vector2( 0.445845, 2.49972 )
-shape = SubResource( 15 )
+shape = SubResource( 9 )
 
 [node name="trampolinetexture" type="Sprite" parent="Game Objects/trampoline"]
 position = Vector2( -1.40084, 51.4276 )
@@ -542,14 +540,14 @@ region_rect = Rect2( 0, 0, 840, 200 )
 position = Vector2( 5339.75, 52.5558 )
 scale = Vector2( 2.34414, 1 )
 mode = 3
-physics_material_override = SubResource( 16 )
+physics_material_override = SubResource( 10 )
 gravity_scale = 0.0
-script = SubResource( 14 )
+script = SubResource( 8 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/trampoline1"]
 position = Vector2( -1.11895, 54.4986 )
 scale = Vector2( 0.445845, 2.49972 )
-shape = SubResource( 15 )
+shape = SubResource( 9 )
 
 [node name="trampolinetexture" type="Sprite" parent="Game Objects/trampoline1"]
 position = Vector2( -1.40084, 51.4276 )
@@ -562,14 +560,14 @@ region_rect = Rect2( 0, 0, 840, 200 )
 position = Vector2( 2921.46, 707.258 )
 scale = Vector2( 2.34414, 1 )
 mode = 3
-physics_material_override = SubResource( 17 )
+physics_material_override = SubResource( 11 )
 gravity_scale = 0.0
-script = SubResource( 18 )
+script = SubResource( 12 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/trampolinehigher"]
 position = Vector2( -1.11895, 54.4986 )
 scale = Vector2( 0.445845, 2.49972 )
-shape = SubResource( 15 )
+shape = SubResource( 9 )
 
 [node name="trampolinetexture" type="Sprite" parent="Game Objects/trampolinehigher"]
 position = Vector2( -1.40084, 51.4276 )
@@ -585,7 +583,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform5"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform5"]
 position = Vector2( -0.577525, 84.8833 )
@@ -601,7 +599,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform1"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform1"]
 position = Vector2( -0.577525, 84.8833 )
@@ -611,13 +609,13 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1300, 450 )
 
 [node name="platform8" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( -282.01, 913 )
+position = Vector2( -559.01, 913 )
 scale = Vector2( 1.53106, 1 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform8"]
 position = Vector2( -336.479, 56.5492 )
 scale = Vector2( 4.19643, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform8"]
 position = Vector2( -294.491, 84.8833 )
@@ -633,7 +631,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform2"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform2"]
 position = Vector2( -0.577525, 84.8833 )
@@ -649,7 +647,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform3"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform3"]
 position = Vector2( -0.577525, 84.8833 )
@@ -665,7 +663,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform7"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform7"]
 position = Vector2( -0.577525, 84.8833 )
@@ -681,7 +679,7 @@ scale = Vector2( 1.53106, 1 )
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform6"]
 position = Vector2( -1.14175, 56.5492 )
 scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="platformtexture" type="Sprite" parent="Game Objects/platform6"]
 position = Vector2( -0.577525, 82.8833 )
@@ -697,13 +695,13 @@ scale = Vector2( 1.85265, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
 position = Vector2( 0, -169.5 )
 scale = Vector2( 1, 14.0385 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="EasterJappie" type="Sprite" parent="Game Objects"]
-position = Vector2( -1385.21, 843.601 )
+position = Vector2( -1662.21, 843.601 )
 scale = Vector2( 0.587677, 0.612786 )
 texture = ExtResource( 43 )
 
@@ -713,11 +711,12 @@ NextLevel = "res://Levels/Level 4.tscn"
 
 [node name="CollisionShape2D" parent="Game Objects/EndArea" index="0"]
 position = Vector2( -98.7134, 83.1372 )
-shape = SubResource( 19 )
+shape = SubResource( 13 )
 
 [node name="EndL3sprite" type="AnimatedSprite" parent="Game Objects/EndArea"]
 scale = Vector2( 0.330115, 0.344219 )
-frames = SubResource( 3 )
+frames = SubResource( 14 )
+frame = 1
 playing = true
 
 [editable path="Game Objects/EndArea"]

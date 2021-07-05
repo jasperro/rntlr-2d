@@ -32,7 +32,7 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 131.901, 10 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -40,7 +40,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
@@ -48,14 +48,14 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="GDScript" id=19]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Area2D
 
 func _on_Ruby_body_entered(body):
 	queue_free()
 "
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
@@ -63,10 +63,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 44.8031, 88.2121 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -166,8 +166,8 @@ scale = Vector2( 0.587677, 0.612786 )
 [node name="HahnSRsprite" type="AnimatedSprite" parent="Game Objects/Hahn"]
 position = Vector2( -25.2609, -27.05 )
 scale = Vector2( 0.624792, 0.624792 )
-frames = SubResource( 5 )
-frame = 2
+frames = SubResource( 3 )
+frame = 3
 playing = true
 flip_h = true
 
@@ -188,8 +188,7 @@ scale = Vector2( 0.587677, 0.612786 )
 [node name="HahnJRsprite" type="AnimatedSprite" parent="Game Objects/HahnJr"]
 position = Vector2( -14.5067, -28.6807 )
 scale = Vector2( 1.96818, 2.14269 )
-frames = SubResource( 8 )
-frame = 3
+frames = SubResource( 4 )
 playing = true
 flip_h = true
 
@@ -206,26 +205,27 @@ enabled = true
 [node name="Ruby" type="Area2D" parent="Game Objects"]
 position = Vector2( 768.81, 356.391 )
 scale = Vector2( 0.587677, 0.612786 )
-script = SubResource( 19 )
+script = SubResource( 5 )
 
 [node name="RubySprite" type="AnimatedSprite" parent="Game Objects/Ruby"]
 position = Vector2( -31.5228, -28.6807 )
 scale = Vector2( 1.96818, 2.14269 )
-frames = SubResource( 11 )
+frames = SubResource( 6 )
+frame = 2
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/Ruby"]
 position = Vector2( -15.2753, -38.2939 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="EndArea" parent="Game Objects" instance=ExtResource( 47 )]
 position = Vector2( 1275.01, 294.989 )
 NextLevel = "res://Levels/Platformer.tscn"
 
 [node name="portal" type="AnimatedSprite" parent="Game Objects/EndArea"]
-scale = Vector2( 1, 1 )
-frames = SubResource( 17 )
+frames = SubResource( 8 )
+frame = 2
 playing = true
 flip_h = true
 
