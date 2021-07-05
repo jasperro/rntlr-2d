@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[node name="LevelBarrier" type="StaticBody2D"]
+position = Vector2( -424.006, 423 )
+scale = Vector2( 1.53106, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -170 )
+scale = Vector2( 1, 200 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}

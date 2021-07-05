@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/scripts/NpcBubble.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Ronan.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/EndArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/LevelBarrier.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/sprites/static/NPC.png" type="Texture" id=32]
 [ext_resource path="res://Assets/sprites/animated/ctrl1.png" type="Texture" id=33]
 [ext_resource path="res://Assets/sprites/static/Textbubblewasdwithrunshift.png" type="Texture" id=34]
@@ -21,7 +23,6 @@
 [ext_resource path="res://Assets/sprites/static/RechtsLB1.png" type="Texture" id=38]
 [ext_resource path="res://Assets/sprites/static/RechtsLB2.png" type="Texture" id=39]
 [ext_resource path="res://Assets/sprites/static/Trampoline.png" type="Texture" id=40]
-[ext_resource path="res://Assets/sprites/static/Platform.png" type="Texture" id=41]
 [ext_resource path="res://Assets/sprites/static/CHECKPOINT.png" type="Texture" id=42]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -40,12 +41,7 @@ animations = [ {
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 131.901, 10 )
-
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=3]
 script/source = "extends RigidBody2D
 func _ready():
 	set_process(true)
@@ -53,10 +49,10 @@ func _ready():
 func _process(delta):
 	set_axis_velocity(Vector2(700,0))"
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 131.227, 10 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ) ],
 "loop": true,
@@ -69,11 +65,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="PhysicsMaterial" id=8]
+[sub_resource type="PhysicsMaterial" id=6]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=7]
 script/source = "extends RigidBody2D
 func _ready():
 	set_process(true)
@@ -82,8 +78,11 @@ func _process(delta):
 	set_axis_velocity(Vector2(0,-200))
 "
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 142.706, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 5000, 60 )
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -101,37 +100,38 @@ autoplay = true
 position = Vector2( 2360, -147 )
 scale = Vector2( 3.89738, 4.36933 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="cloud1" type="AnimatedSprite" parent="Game Objects"]
 position = Vector2( 3490, -427 )
 scale = Vector2( 3.89738, 4.36933 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="cloud4" type="AnimatedSprite" parent="Game Objects"]
 position = Vector2( 3590, 83 )
 scale = Vector2( 3.89738, 4.36933 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="cloud2" type="AnimatedSprite" parent="Game Objects"]
 position = Vector2( 4611, -227 )
 scale = Vector2( 3.89738, 4.36933 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="cloud3" type="AnimatedSprite" parent="Game Objects"]
 position = Vector2( 4952, -807 )
 scale = Vector2( 3.89738, 4.36933 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="kippenbergen" type="Sprite" parent="Game Objects"]
-position = Vector2( -1451.02, 130 )
+position = Vector2( -1451.02, 208 )
 scale = Vector2( 1.90189, 2.08 )
 z_index = -4096
 texture = ExtResource( 5 )
@@ -162,13 +162,13 @@ texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 70, 70 )
 
 [node name="kippenheuvels" type="Sprite" parent="Game Objects"]
-position = Vector2( -279.321, 101.433 )
+position = Vector2( -279.321, 283.433 )
 scale = Vector2( 1.74741, 1.91105 )
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 1920, 0 )
 
 [node name="BgTrees" type="Sprite" parent="Game Objects"]
-position = Vector2( 246.085, -20.0699 )
+position = Vector2( 243, 75 )
 scale = Vector2( 0.701995, 0.767738 )
 texture = ExtResource( 8 )
 
@@ -180,14 +180,14 @@ hframes = 6
 frame = 2
 
 [node name="tree2" type="Sprite" parent="Game Objects"]
-position = Vector2( 479, 229 )
+position = Vector2( 484, 232 )
 scale = Vector2( 3.89738, 4.36933 )
 texture = ExtResource( 9 )
 hframes = 6
 frame = 5
 
 [node name="tree3" type="Sprite" parent="Game Objects"]
-position = Vector2( 51, 220 )
+position = Vector2( 51, 225 )
 scale = Vector2( 3.89738, 4.36933 )
 texture = ExtResource( 9 )
 hframes = 6
@@ -215,7 +215,7 @@ hframes = 6
 frame = 3
 
 [node name="tree7" type="Sprite" parent="Game Objects"]
-position = Vector2( 4322.97, -19.368 )
+position = Vector2( 4325, -20 )
 scale = Vector2( 2.56804, 2.87902 )
 texture = ExtResource( 9 )
 hframes = 6
@@ -231,7 +231,7 @@ frame = 4
 [node name="RonanPlayer" parent="Game Objects" instance=ExtResource( 11 )]
 
 [node name="NPC" type="Node2D" parent="Game Objects"]
-position = Vector2( 1408.81, 338.391 )
+position = Vector2( 1402, 337 )
 scale = Vector2( 0.587677, 0.612786 )
 
 [node name="NPCsprite" type="Sprite" parent="Game Objects/NPC"]
@@ -251,56 +251,28 @@ script = ExtResource( 10 )
 position = Vector2( -18.7178, 19.5827 )
 enabled = true
 
-[node name="left_barrier" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( -423.006, 423 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
-position = Vector2( 0, -169.5 )
-scale = Vector2( 1, 14.0385 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="groundcollision" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( -393.006, 362 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
-position = Vector2( 575.527, 61.8879 )
-scale = Vector2( 4.55184, 3.38388 )
-shape = SubResource( 4 )
-
-[node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
-position = Vector2( -195.288, 205 )
-scale = Vector2( 0.54848, 1.0306 )
-texture = ExtResource( 35 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 5000, 450 )
-
 [node name="lopendeband" type="RigidBody2D" parent="Game Objects"]
 position = Vector2( 3557.89, -165.971 )
 scale = Vector2( 1.53106, 1 )
 mode = 3
-script = SubResource( 5 )
+script = SubResource( 3 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/lopendeband"]
 position = Vector2( -5.84336, 57.5492 )
 scale = Vector2( 0.717083, 2.49972 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="lopendetexture" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -84.4189, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 playing = true
 
 [node name="lopendetexture3" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 9.6336, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 frame = 1
 playing = true
@@ -308,7 +280,7 @@ playing = true
 [node name="lopendetexture1" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -53.068, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 frame = 1
 playing = true
@@ -316,7 +288,7 @@ playing = true
 [node name="lopendetexture3 2" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 40.9846, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 frame = 1
 playing = true
@@ -324,7 +296,7 @@ playing = true
 [node name="lopendetexture2" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( -21.7173, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 frame = 1
 playing = true
@@ -332,7 +304,7 @@ playing = true
 [node name="lopendetexture3 3" type="AnimatedSprite" parent="Game Objects/lopendeband"]
 position = Vector2( 72.3352, 55 )
 scale = Vector2( 0.787504, 1.0306 )
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "rechts"
 playing = true
 
@@ -340,14 +312,14 @@ playing = true
 position = Vector2( 4101.46, -318.942 )
 scale = Vector2( 2.34414, 1 )
 mode = 3
-physics_material_override = SubResource( 8 )
+physics_material_override = SubResource( 6 )
 gravity_scale = 0.0
-script = SubResource( 9 )
+script = SubResource( 7 )
 
 [node name="platformcollision" type="CollisionShape2D" parent="Game Objects/trampoline"]
 position = Vector2( -1.11895, 54.4986 )
 scale = Vector2( 0.445845, 2.49972 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="trampolinetexture" type="Sprite" parent="Game Objects/trampoline"]
 position = Vector2( -1.40084, 51.4276 )
@@ -356,155 +328,58 @@ texture = ExtResource( 40 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 840, 200 )
 
-[node name="platform5" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 4339.99, -28 )
-scale = Vector2( 1.53106, 1 )
+[node name="Platform1" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 4340, 56 )
 
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform5"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
+[node name="platformtexture" parent="Game Objects/Platform1" index="1"]
+position = Vector2( 0, -29 )
+region_rect = Rect2( 0, 0, 1280, 224 )
 
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform5"]
-position = Vector2( -0.577525, 54.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 250 )
+[node name="Platform2" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 2646, 207 )
 
-[node name="platform1" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 2645.99, 129 )
-scale = Vector2( 1.53106, 1 )
+[node name="Platform3" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 1934.99, 347 )
 
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform1"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
+[node name="Platform4" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 3255.99, 377 )
 
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform1"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
+[node name="Platform5" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 4185.99, 287 )
 
-[node name="platform0" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 1934.99, 269 )
-scale = Vector2( 1.53106, 1 )
+[node name="Platform6" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 4545.99, -543 )
 
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform0"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
+[node name="Platform7" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 5324.99, -561 )
 
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform0"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="platform2" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 3255.99, 299 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform2"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
-
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform2"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="platform4" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 4185.99, 209 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform4"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
-
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform4"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="platform3" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 4545.99, -621 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform3"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
-
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform3"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="platform7" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 5325.99, -639 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform7"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
-
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform7"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="platform6" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 4784.99, 141.063 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="platformcollision" type="CollisionShape2D" parent="Game Objects/platform6"]
-position = Vector2( -1.14175, 56.5492 )
-scale = Vector2( 0.751939, 2.49972 )
-shape = SubResource( 6 )
-
-[node name="platformtexture" type="Sprite" parent="Game Objects/platform6"]
-position = Vector2( -0.577525, 84.8833 )
-scale = Vector2( 0.153197, 0.287859 )
-texture = ExtResource( 41 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1300, 450 )
-
-[node name="right_barrier1" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 6199.28, 418 )
-scale = Vector2( 1.85265, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
-position = Vector2( 0, -169.5 )
-scale = Vector2( 1, 14.0385 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Platform8" parent="Game Objects" instance=ExtResource( 13 )]
+position = Vector2( 4784.99, 219.063 )
 
 [node name="EndArea" parent="Game Objects" instance=ExtResource( 12 )]
-position = Vector2( 5434.7, -643.683 )
+position = Vector2( 5406, -623 )
 NextLevel = "res://Levels/Level 2.tscn"
 
-[node name="CollisionShape2D" parent="Game Objects/EndArea" index="0"]
-position = Vector2( 2.83975, 8.60028 )
-
 [node name="EndSprite" type="Sprite" parent="Game Objects/EndArea"]
-scale = Vector2( 1.14914, 1.19823 )
 texture = ExtResource( 42 )
 
-[editable path="Game Objects/EndArea"]
+[node name="groundcollision" type="StaticBody2D" parent="Game Objects"]
+position = Vector2( -3598, 553 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
+position = Vector2( 0, -115 )
+shape = SubResource( 9 )
+
+[node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
+position = Vector2( 0, -1 )
+texture = ExtResource( 35 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 450 )
+
+[node name="LevelBarrier" parent="Game Objects" instance=ExtResource( 14 )]
+position = Vector2( -423, 423 )
+
+[node name="LevelBarrier2" parent="Game Objects" instance=ExtResource( 14 )]
+position = Vector2( 5922, 423 )
+
+[editable path="Game Objects/Platform1"]

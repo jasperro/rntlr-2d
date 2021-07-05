@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Ronan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/EndArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/scripts/NpcBubble.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/LevelBarrier.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/sprites/static/NPC.png" type="Texture" id=27]
 [ext_resource path="res://Assets/sprites/static/TextNPCstory.png" type="Texture" id=28]
 [ext_resource path="res://Assets/sprites/animated/Npc1/sprite_00.png" type="Texture" id=29]
@@ -40,16 +41,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ) ],
+"frames": [ ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ) ],
 "loop": true,
 "name": "default",
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 1776.33, 10 )
+extents = Vector2( 5000, 60 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -72,7 +71,7 @@ autoplay = true
 [node name="Game Objects" type="Node2D" parent="."]
 
 [node name="Mountains" type="Sprite" parent="Game Objects"]
-position = Vector2( 618.985, 130 )
+position = Vector2( 1900, 237 )
 scale = Vector2( 1.90189, 2.08 )
 z_index = -4096
 texture = ExtResource( 2 )
@@ -80,22 +79,22 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 6400, 255 )
 
 [node name="treeb1" type="Sprite" parent="Game Objects"]
-position = Vector2( 2271.34, 296.643 )
-scale = Vector2( 3.19384, 3.96331 )
+position = Vector2( 2244, 301 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 flip_h = true
 hframes = 6
 frame = 3
 
 [node name="BgTrees" type="Sprite" parent="Game Objects"]
-position = Vector2( 246.085, -27.8511 )
-scale = Vector2( 0.701995, 0.767738 )
+position = Vector2( -373, -383 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="BgTrees1" type="Sprite" parent="Game Objects"]
-position = Vector2( 3162.09, -27.8511 )
-scale = Vector2( 0.701995, 0.767738 )
+position = Vector2( 2464, -383 )
 texture = ExtResource( 4 )
+centered = false
 flip_h = true
 
 [node name="RonanPlayer" parent="Game Objects" instance=ExtResource( 5 )]
@@ -123,10 +122,10 @@ script = ExtResource( 7 )
 position = Vector2( 377, 299 )
 
 [node name="NPCsprite" type="AnimatedSprite" parent="Game Objects/NPC1"]
-position = Vector2( 14.8969, 42.7962 )
+position = Vector2( 14.8969, 52.7962 )
 scale = Vector2( 1.81242, 1.70762 )
 frames = SubResource( 1 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Feet" type="RayCast2D" parent="Game Objects/NPC1"]
@@ -134,56 +133,27 @@ visible = false
 enabled = true
 
 [node name="NpcBubble" type="AnimatedSprite" parent="Game Objects/NPC1"]
-position = Vector2( 146.589, -52.945 )
+position = Vector2( 137, -26 )
 scale = Vector2( 1.18122, 1.18576 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 script = ExtResource( 7 )
 
-[node name="left_barrier" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( -423.006, 423 )
-scale = Vector2( 1.53106, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/left_barrier"]
-position = Vector2( 0, -169.5 )
-scale = Vector2( 1, 14.0385 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="groundcollision" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( -393.006, 362 )
-scale = Vector2( 1.53106, 1 )
+position = Vector2( 1900, 570 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/groundcollision"]
-position = Vector2( 1525.75, 61.8879 )
-scale = Vector2( 0.877087, 3.38388 )
+position = Vector2( 0, -115 )
 shape = SubResource( 4 )
 
 [node name="groundtexture" type="Sprite" parent="Game Objects/groundcollision"]
-position = Vector2( 1158.02, 205 )
-scale = Vector2( 0.54848, 1.0306 )
 texture = ExtResource( 44 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 10000, 450 )
 
-[node name="right_barrier1" type="StaticBody2D" parent="Game Objects"]
-position = Vector2( 4309.28, 418 )
-scale = Vector2( 1.85265, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/right_barrier1"]
-position = Vector2( 0, -169.5 )
-scale = Vector2( 1, 14.0385 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="tree1" type="Sprite" parent="Game Objects"]
-position = Vector2( 1290, 340 )
-scale = Vector2( 3.89738, 4.36933 )
+position = Vector2( 1545, 351 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 hframes = 6
 frame = 2
@@ -196,8 +166,8 @@ texture = ExtResource( 3 )
 hframes = 6
 
 [node name="tree5" type="Sprite" parent="Game Objects"]
-position = Vector2( 1971.7, 287.698 )
-scale = Vector2( 3.23544, 3.72157 )
+position = Vector2( 1971, 313 )
+scale = Vector2( 3, 3 )
 z_index = -10
 texture = ExtResource( 3 )
 hframes = 6
@@ -212,9 +182,17 @@ hframes = 6
 frame = 1
 
 [node name="EndArea" parent="Game Objects" instance=ExtResource( 6 )]
+position = Vector2( 3033, 294 )
+scale = Vector2( 2, 2 )
 
 [node name="portal" type="AnimatedSprite" parent="Game Objects/EndArea"]
 frames = SubResource( 5 )
 frame = 1
 playing = true
 flip_h = true
+
+[node name="LevelBarrier" parent="Game Objects" instance=ExtResource( 8 )]
+position = Vector2( -423, 423 )
+
+[node name="LevelBarrier2" parent="Game Objects" instance=ExtResource( 8 )]
+position = Vector2( 4400, 423 )

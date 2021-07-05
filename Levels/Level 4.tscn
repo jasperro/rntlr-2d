@@ -92,7 +92,7 @@ autoplay = true
 [node name="Game Objects" type="Node2D" parent="."]
 
 [node name="RonanPlayer" parent="Game Objects" instance=ExtResource( 24 )]
-position = Vector2( 398, 360 )
+position = Vector2( 398, 337 )
 
 [node name="achterhuisachtergrond" type="Sprite" parent="Game Objects"]
 position = Vector2( 864.743, 281.419 )
@@ -167,48 +167,39 @@ scale = Vector2( 0.587677, 0.612786 )
 position = Vector2( -25.2609, -27.05 )
 scale = Vector2( 0.624792, 0.624792 )
 frames = SubResource( 3 )
-frame = 3
 playing = true
 flip_h = true
 
 [node name="NpcBubble" type="Sprite" parent="Game Objects/Hahn"]
-position = Vector2( 249.824, -196.114 )
+position = Vector2( 192.606, -189.937 )
 scale = Vector2( 2.18979, 2.11905 )
 texture = ExtResource( 14 )
 script = ExtResource( 46 )
-
-[node name="Feet" type="RayCast2D" parent="Game Objects/Hahn"]
-position = Vector2( -18.7178, 19.5827 )
-enabled = true
 
 [node name="HahnJr" type="Node2D" parent="Game Objects"]
 position = Vector2( 878.81, 335.391 )
 scale = Vector2( 0.587677, 0.612786 )
 
 [node name="HahnJRsprite" type="AnimatedSprite" parent="Game Objects/HahnJr"]
-position = Vector2( -14.5067, -28.6807 )
+position = Vector2( 71.7911, -25.1164 )
 scale = Vector2( 1.96818, 2.14269 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="NpcBubble" type="Sprite" parent="Game Objects/HahnJr"]
-position = Vector2( 283.857, -196.114 )
+position = Vector2( 301.509, -181.778 )
 scale = Vector2( 2.18979, 2.11905 )
 texture = ExtResource( 19 )
 script = ExtResource( 46 )
 
-[node name="Feet" type="RayCast2D" parent="Game Objects/HahnJr"]
-position = Vector2( -18.7178, 19.5827 )
-enabled = true
-
 [node name="Ruby" type="Area2D" parent="Game Objects"]
-position = Vector2( 768.81, 356.391 )
+position = Vector2( 768.81, 329.391 )
 scale = Vector2( 0.587677, 0.612786 )
 script = SubResource( 5 )
 
 [node name="RubySprite" type="AnimatedSprite" parent="Game Objects/Ruby"]
-position = Vector2( -31.5228, -28.6807 )
 scale = Vector2( 1.96818, 2.14269 )
 frames = SubResource( 6 )
 frame = 2
@@ -216,7 +207,6 @@ playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Objects/Ruby"]
-position = Vector2( -15.2753, -38.2939 )
 shape = SubResource( 7 )
 
 [node name="EndArea" parent="Game Objects" instance=ExtResource( 47 )]

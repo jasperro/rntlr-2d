@@ -65,12 +65,11 @@ func _process(delta):
 	"
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 13.975 )
+extents = Vector2( 22, 43 )
 
 [node name="RonanPlayer" type="RigidBody2D" groups=[
 "Player",
 ]]
-position = Vector2( 222, 132 )
 z_index = 1
 mass = 1.02041
 physics_material_override = SubResource( 1 )
@@ -80,20 +79,18 @@ move_speed = 400
 next_level = "res://Levels/level2.xml"
 
 [node name="Ronan" type="AnimatedSprite" parent="."]
-position = Vector2( 18.5, -18.5 )
 scale = Vector2( 1.28462, 1.28462 )
 frames = SubResource( 2 )
-frame = 7
+frame = 3
 playing = true
 script = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 20.5237, -7.6126 )
-scale = Vector2( 1.83023, 2.97841 )
+position = Vector2( 0, 8 )
 shape = SubResource( 4 )
 
 [node name="Feet" type="RayCast2D" parent="."]
-position = Vector2( 21.4702, -10.9404 )
+position = Vector2( 0, 1 )
 enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
